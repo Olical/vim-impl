@@ -4,14 +4,20 @@ endif
 
 syn region implString start='"' end='"'
 syn keyword implFunction fn
-syn keyword implKeyword map filter reduce
 syn keyword implBool true false
-syn keyword implSpecial ; : , \
 syn keyword implConditional if
+syn match implSpecial '[^\\][;:,\\]'
+syn match implSymbol '[a-zA-Z0-9\-<>]\+'
+syn match implComment "[^\\]#.*"
+
 syn match implNumber '\d\+'
 syn match implNumber '[-+]\d\+'
-syn match implSymbol '\w\+'
-syn match implComment "#.*"
+syn match implNumber '\d\+\.\d*'
+syn match implNumber '[-+]\d\+\.\d*'
+syn match implNumber '[-+]\=\d[[:digit:]]*[eE][\-+]\=\d\+'
+syn match implNumber '\d[[:digit:]]*[eE][\-+]\=\d\+'
+syn match implNumber '[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
+syn match implNumber '\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
 
 hi def link implString string
 hi def link implFunction function
