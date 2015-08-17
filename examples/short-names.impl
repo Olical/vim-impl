@@ -1,5 +1,6 @@
 fn short-names: people
   filter
+    # This is a comment.
     map people
       fn: person, get person "name"
     fn: name

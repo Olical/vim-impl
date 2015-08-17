@@ -16,6 +16,7 @@ syn keyword implConditional if
 syn match implNumber '\d\+' contained display
 syn match implNumber '[-+]\d\+' contained display
 syn match implSymbol '\w\+' contained display
+syn match implComment "#.*$" contained display
 
 hi def link implString string
 hi def link implFunction function
@@ -25,3 +26,4 @@ hi def link implBool boolean
 hi def link implSpecial special
 hi def link implConditional conditional
 hi def link implSymbol identifier
+hi def link implComment comment
